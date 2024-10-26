@@ -11,9 +11,8 @@
 
         <div class="input-group has-validation">
             <div class="form-floating">
-                <input type="text" id="first_name" name="first_name"
-                    class="form-control @error('first_name') is-invalid @enderror" value="{{ old('first_name') }}"
-                    required>
+                <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
+                    value="{{ old('first_name') }}" placeholder="">
                 <label for="first_name">First Name</label>
             </div>
             @error('first_name')
@@ -24,7 +23,7 @@
         <div class="input-group has-validation mt-3">
             <div class="form-floating">
                 <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-                    value="{{ old('last_name') }}">
+                    value="{{ old('last_name') }}" placeholder="">
                 <label for="last_name">Last Name</label>
             </div>
             @error('last_name')
@@ -35,7 +34,7 @@
         <div class="input-group has-validation mt-3">
             <div class="form-floating">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                    value="{{ old('email') }}">
+                    value="{{ old('email') }}" placeholder="">
                 <label for="email">E-mail</label>
             </div>
             @error('email')
@@ -45,7 +44,8 @@
 
         <div class="input-group has-validation mt-3">
             <div class="form-floating">
-                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                    placeholder="">
                 <label for="password">Password</label>
             </div>
             @error('password')
@@ -56,7 +56,7 @@
         <div class="input-group has-validation mt-3">
             <div class="form-floating">
                 <input type="password" name="password_confirmation"
-                    class="form-control @error('password_confirmation') is-invalid @enderror">
+                    class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="">
                 <label for="password_confirmation">Confirm Password</label>
             </div>
             @error('password_confirmation')

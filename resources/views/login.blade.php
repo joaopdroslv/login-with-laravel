@@ -21,27 +21,32 @@
 @else
 
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <form action="{{ route('login.store') }}" method="POST" class="w-25">
+        <form action="{{ route('login.store') }}" method="POST" class="w-25 needs-validation" novalidate>
             <h2>Login</h2>
             <hr class="mt-4 mb-5">
-
             @csrf
 
-            <div class="form-floating">
-                <input type="text" name="email" id="" class="form-control">
-                <label for="email">E-mail</label>
+            <div class="input-group has-validation">
+                <div class="form-floating">
+                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
+                        value="{{ old('email') }}" placeholder="">
+                    <label for="email">E-mail</label>
+                </div>
+                @error('email')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
-            @error('email')
-                <div class="alert alert-danger mt-2">{{ $message }}</div>
-            @enderror
 
-            <div class="form-floating">
-                <input type="password" name="password" id="" class="form-control mt-3">
-                <label for="password">Password</label>
+            <div class="input-group has-validation mt-3">
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                        value="{{ old('password') }}" placeholder="">
+                    <label for="password">Password</label>
+                </div>
+                @error('password')
+                    <div class="invalid-feedback d-block">{{ $message }}</div>
+                @enderror
             </div>
-            @error('password')
-                <div class="alert alert-danger mt-2">{{ $message }}</div>
-            @enderror
 
             <div class="mt-3">
                 Don't have an account? <a href="{{ route('login.register') }}">Register now</a>
